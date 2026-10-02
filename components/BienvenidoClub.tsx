@@ -18,7 +18,7 @@ export default function BienvenidoClub() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-center">
           <h2 className="barlow-extrabold -skew-x-6 origin-bottom-left text-5xl uppercase text-white md:text-6xl">
-            Bienvenido al club
+            Yamaha Liquidaciones de Club
           </h2>
           <p className="max-w-xs text-lg text-[#8FA3D6]">
             Encuentra la moto para tu forma de rodar: ciudad, trabajo, pista o
