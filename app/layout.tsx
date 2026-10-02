@@ -1,15 +1,35 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localfont from "next/font/local";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const barlowRegular = localfont({
+  src: "./fonts/Barlow-Regular.ttf",
+  variable: "--font-barlow-regular",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const barlowMedium = localfont({
+  src: "./fonts/Barlow-Medium.ttf",
+  variable: "--font-barlow-medium",
+  display: "swap",
+});
+
+const barlowSemiBold = localfont({
+  src: "./fonts/Barlow-SemiBold.ttf",
+  variable: "--font-barlow-semibold",
+  display: "swap",
+});
+
+const barlowBold = localfont({
+  src: "./fonts/BarlowCondensed-Bold.ttf",
+  variable: "--font-barlow-bold",
+  display: "swap",
+});
+
+const barlowExtraBold = localfont({
+  src: "./fonts/BarlowCondensed-ExtraBold.ttf",
+  variable: "--font-barlow-extrabold",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -21,7 +41,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={` ${barlowRegular.variable} ${barlowMedium.variable} ${barlowSemiBold.variable} ${barlowBold.variable} ${barlowExtraBold.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
