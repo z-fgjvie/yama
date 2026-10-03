@@ -3,13 +3,49 @@ import Image from "next/image";
 import Link from "next/link";
 
 const categorias = [
-  { nombre: "Scooters", src: "/scooter.webp", href: "#" },
-  { nombre: "Trabajo", src: "/trabajo.webp", href: "#" },
-  { nombre: "Street", src: "/street.webp", href: "#" },
-  { nombre: "Deportivas", src: "/deportiva.webp", href: "#" },
-  { nombre: "Super deportivas", src: "/super-deportiva.webp", href: "#" },
-  { nombre: "Doble propósito", src: "/doble-proposito.webp", href: "#" },
-  { nombre: "Off-Road", src: "/off-road.webp", href: "#" },
+  {
+    id: 1,
+    slug: "scooters",
+    nombre: "Scooters",
+    src: "/scooter.webp",
+    href: "#",
+  },
+  {
+    id: 2,
+    slug: "trabajo",
+    nombre: "Trabajo",
+    src: "/trabajo.webp",
+    href: "#",
+  },
+  { id: 3, slug: "street", nombre: "Street", src: "/street.webp", href: "#" },
+  {
+    id: 4,
+    slug: "deportivas",
+    nombre: "Deportivas",
+    src: "/deportiva.webp",
+    href: "#",
+  },
+  {
+    id: 5,
+    nombre: "Super deportivas",
+    slug: "super-deportivas",
+    src: "/super-deportiva.webp",
+    href: "#",
+  },
+  {
+    id: 6,
+    slug: "doble-proposito",
+    nombre: "Doble propósito",
+    src: "/doble-proposito.webp",
+    href: "#",
+  },
+  {
+    id: 7,
+    slug: "off-road",
+    nombre: "Off-Road",
+    src: "/off-road.webp",
+    href: "#",
+  },
 ];
 
 export default function BienvenidoClub() {
@@ -29,8 +65,8 @@ export default function BienvenidoClub() {
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {categorias.map((c) => (
             <Link
-              key={c.nombre}
-              href={c.href}
+              key={c.id}
+              href={`/motos/${c.slug}`}
               className="group flex flex-col border border-white/10 bg-[#0F1738] p-5 transition-colors duration-300 hover:border-red-600"
             >
               <div className="relative h-52 w-full">
