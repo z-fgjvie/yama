@@ -24,12 +24,12 @@ export default async function PageMotos({
         className={` bg-no-repeat bg-cover bg-top h-120 md:h-132 lg:h-156 flex items-end relative`}
         style={{ backgroundImage: `url(${moto?.banner})` }}
       >
-        <h1 className="text-[70px] mb-16 ml-24 barlow-extrabold uppercase text-white">
+        <h1 className="text-5xl md:text-[4.375rem] mb-16 ml-12 md:ml-24 barlow-extrabold uppercase text-white">
           {moto?.nombre}
         </h1>
       </section>
 
-      <section className="bg-[#EEF2FA] py-20">
+      <section className="bg-[#EEF2FA] py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-6">
           <Link
             href="/"
