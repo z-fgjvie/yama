@@ -5,6 +5,7 @@ import ExploraYamaha from "@/components/ExploraYamaha";
 import FooterYamaha from "@/components/FooterYamaha";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Liquidacion from "../components/Liquidacion";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Header />
       <Hero />
       <ExploraYamaha />
+      <Liquidacion />
       <BienvenidoClub />
       <ComunidadYamaha />
       <AyudaYamaha />
