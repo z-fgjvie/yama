@@ -50,7 +50,7 @@ const categorias = [
 
 export default function BienvenidoClub() {
   return (
-    <section className="bg-[#0B1130] py-20">
+    <section className="bg-[#0B1130] py-20 scroll-topi" id="motos">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-center">
           <h2 className="barlow-extrabold -skew-x-6 origin-bottom-left text-5xl uppercase text-white md:text-6xl">

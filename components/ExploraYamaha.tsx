@@ -4,13 +4,13 @@ import Link from "next/link";
 const items = [
   {
     nombre: "Motos",
-    href: "#",
+    href: "#motos",
     src: "/explore-moto.webp",
     alt: "explore-motos",
   },
   {
     nombre: "ATV's",
-    href: "#",
+    href: "atvs",
     src: "/explore-atv.webp",
     alt: "explore-atv",
   },

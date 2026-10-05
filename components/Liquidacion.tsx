@@ -37,7 +37,7 @@ const icono = (
 
 export default function Liquidacion() {
   return (
-    <section className="relative overflow-hidden bg-[#050A1C] py-24">
+    <section className="relative overflow-hidden bg-[#050A1C] py-24 scroll-topi">
       {/* Fondos */}
       <div className="absolute -right-[12%] top-0 h-full w-[48%] -skew-x-12 bg-gradient-to-b from-[#1747E6] to-[#0C2C9C]" />
       <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-red-600/20 blur-3xl" />
@@ -63,7 +63,8 @@ export default function Liquidacion() {
           </span>
 
           <h2 className="barlow-extrabold -skew-x-6 origin-bottom-left mt-6 text-6xl uppercase leading-[0.95] text-white md:text-7xl">
-            Motos Yamaha en <span className="text-red-500">liquidación</span>
+            Motos Yamaha en{" "}
+            <span className="text-red-500">liquidación directa de planta</span>
           </h2>
 
           <p className="mt-6 max-w-lg text-lg text-[#C9D5FA]">
@@ -89,7 +90,7 @@ export default function Liquidacion() {
 
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
-              href="#"
+              href="#motos"
               className="inline-block bg-red-600 px-10 py-4 text-lg font-bold text-white transition-colors hover:bg-red-700 [clip-path:polygon(18px_0,100%_0,calc(100%_-_18px)_100%,0_100%)]"
             >
               Ver motos en liquidación
@@ -107,13 +108,14 @@ export default function Liquidacion() {
         <div className="relative mx-auto aspect-square w-full max-w-lg">
           <div className="absolute inset-0 m-auto h-4/5 w-4/5 rounded-full bg-white/10 blur-2xl" />
           <Image
-            src="/superdeportivas/yzf-r7-2025.webp"
+            src="/nuevos-lanzamientos.png"
             alt="Moto Yamaha en liquidación"
-            fill
+            width={350}
+            height={350}
             className="object-contain drop-shadow-[0_30px_40px_rgba(0,0,0,0.5)]"
           />
 
-          <div className="absolute -left-2 bottom-6 -rotate-6 bg-red-600 px-6 py-3 text-center text-white shadow-xl">
+          <div className="absolute -left-2 bottom-16 -rotate-6 bg-red-600 px-6 py-3 text-center text-white shadow-xl">
             <span className="block text-xs font-semibold uppercase">
               Últimas
             </span>

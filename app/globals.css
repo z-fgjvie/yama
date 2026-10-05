@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-barlow-regular);
 }
@@ -18,4 +22,8 @@ body {
 
 .barlow-semibold {
   font-family: var(--font-barlow-semibold);
+}
+
+.scroll-topi {
+  scroll-margin-top: 4rem;
 }
