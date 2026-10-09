@@ -3,9 +3,7 @@ import Header from "@/components/Header";
 import { dataMotos } from "@/data/dataMotos";
 import Image from "next/image";
 import Link from "next/link";
-import { FaArrowLeft } from "react-icons/fa";
 import { FiArrowLeft } from "react-icons/fi";
-import { GoArrowLeft } from "react-icons/go";
 
 export default async function PageMotos({
   params,
@@ -15,6 +13,8 @@ export default async function PageMotos({
   const { slug } = await params;
 
   const moto = dataMotos.find((item) => item.slug === slug);
+
+  console.log("PAGINA LISTA");
 
   return (
     <>
@@ -85,7 +85,7 @@ export default async function PageMotos({
                     </span>
                   </div>
 
-                  {/* <span className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#0C2C9C] text-white transition-colors duration-300 group-hover:bg-red-600">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#0C2C9C] text-white transition-colors duration-300 group-hover:bg-red-600">
                     <svg
                       viewBox="0 0 24 24"
                       className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-0.5"
@@ -97,7 +97,7 @@ export default async function PageMotos({
                     >
                       <path d="M5 12h14M13 6l6 6-6 6" />
                     </svg>
-                  </span> */}
+                  </span>
                 </div>
               </Link>
             ))}
