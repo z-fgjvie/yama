@@ -4,38 +4,227 @@ import Link from "next/link";
 import React from "react";
 import { FiArrowLeft } from "react-icons/fi";
 
-const utilitariosImagenes = [
+type Props = {
+  params: Promise<{
+    slug: string;
+  }>;
+};
+
+type Moto = {
+  id: number;
+  nombre: string;
+  precio: string;
+  slug: string;
+  img: string;
+  year: string;
+  datos: {
+    frase: string;
+    precioRegular: string;
+    bono: string;
+    precioConBono: string;
+    pdf: string;
+    imagenHero: string;
+    imagenFicha: string;
+    imagenesMotos: {
+      id: number;
+      imagen: string;
+    }[];
+    imagenesData: {
+      id: number;
+      imagen: string;
+    }[];
+  };
+};
+
+export const utilitariosImagenes: Moto[] = [
   {
     id: 1,
     nombre: "Kodiak 450",
     precio: "$199,999",
-    img: "/utilitarios/uti-1.jpg",
-    year: "2026",
+    slug: "kodiad-450",
+    img: "/utilitarios/uti-4.jpg",
+    year: "2027",
+    datos: {
+      frase: "Supera los límites, conquista la naturaleza.",
+      precioRegular: "$224,999",
+      bono: "$25,000",
+      precioConBono: "$199,999",
+      pdf: "/pdf/fascino-2024.pdf",
+      imagenHero: "/utilitarios/kodi/kodi-hero.jpg",
+      imagenFicha: "",
+
+      imagenesMotos: [
+        {
+          id: 1,
+          imagen: "/utilitarios/kodi/kodi-1.png",
+        },
+        {
+          id: 2,
+          imagen: "/utilitarios/kodi/kodi-2.png",
+        },
+      ],
+      imagenesData: [
+        {
+          id: 1,
+          imagen: "/utilitarios/kodi/kodi-3.jpg",
+        },
+        {
+          id: 2,
+          imagen: "/utilitarios/kodi/kodi-4.jpg",
+        },
+
+        {
+          id: 3,
+          imagen: "/utilitarios/kodi/kodi-5.jpg",
+        },
+        {
+          id: 4,
+          imagen: "/utilitarios/kodi/kodi-6.jpg",
+        },
+        {
+          id: 5,
+          imagen: "/utilitarios/kodi/kodi-7.jpg",
+        },
+        {
+          id: 6,
+          imagen: "/utilitarios/kodi/kodi-8.jpg",
+        },
+        {
+          id: 7,
+          imagen: "/utilitarios/kodi/kodi-9.jpg",
+        },
+        {
+          id: 8,
+          imagen: "/utilitarios/kodi/kodi-10.jpg",
+        },
+        {
+          id: 9,
+          imagen: "/utilitarios/kodi/kodi-11.jpg",
+        },
+      ],
+    },
   },
   {
     id: 2,
     nombre: "YFM700G GRIZZLY EPS SE",
     precio: "$289,999",
+    slug: "yfm-700g-grizzly-eps-se",
     img: "/utilitarios/uti-2.jpg",
     year: "2025",
+    datos: {
+      frase: "Domina el Terreno con Potencia Imparable",
+      precioRegular: "$309,999",
+      bono: "$20,000",
+      precioConBono: "$289,999",
+      pdf: "/pdf/fascino-2024.pdf",
+      imagenHero: "/utilitarios/griz/griz-hero.jpg",
+      imagenFicha: "/utilitarios/griz/griz-ficha.jpg",
+
+      imagenesMotos: [
+        {
+          id: 1,
+          imagen: "/utilitarios/griz/griz-1.jpg",
+        },
+        {
+          id: 2,
+          imagen: "/utilitarios/griz/griz-2.jpg",
+        },
+        {
+          id: 3,
+          imagen: "/utilitarios/griz/griz-3.jpg",
+        },
+        {
+          id: 4,
+          imagen: "/utilitarios/griz/griz-5.jpg",
+        },
+      ],
+      imagenesData: [
+        {
+          id: 1,
+          imagen: "/utilitarios/griz/griz-6b.jpg",
+        },
+        {
+          id: 2,
+          imagen: "/utilitarios/griz/griz-7.jpg",
+        },
+
+        {
+          id: 3,
+          imagen: "/utilitarios/griz/griz-8.jpg",
+        },
+      ],
+    },
   },
   {
     id: 3,
     nombre: "GRIZZLY EPS XT-R",
     precio: "$309,999",
+    slug: "grizzly-eps-xt-r",
     img: "/utilitarios/uti-3.png",
     year: "2026",
-  },
-  {
-    id: 4,
-    nombre: "Kodiak 450",
-    precio: "$199,999",
-    img: "/utilitarios/uti-4.jpg",
-    year: "2027",
+    datos: {
+      frase: "Domina cualquier terreno",
+      precioRegular: "$309,999",
+      bono: "",
+      precioConBono: "",
+      pdf: "/pdf/fascino-2024.pdf",
+      imagenHero: "/utilitarios/xtr/xtr-hero.jpg",
+      imagenFicha: "/utilitarios/xtr/xtr-ficha.jpg",
+
+      imagenesMotos: [
+        {
+          id: 1,
+          imagen: "/utilitarios/xtr/xtr-1.png",
+        },
+        {
+          id: 2,
+          imagen: "/utilitarios/xtr/xtr-2.png",
+        },
+        {
+          id: 3,
+          imagen: "/utilitarios/xtr/xtr-3.png",
+        },
+        {
+          id: 4,
+          imagen: "/utilitarios/xtr/xtr-4.png",
+        },
+        {
+          id: 5,
+          imagen: "/utilitarios/xtr/xtr-5.png",
+        },
+        {
+          id: 6,
+          imagen: "/utilitarios/xtr/xtr-6.png",
+        },
+        {
+          id: 7,
+          imagen: "/utilitarios/xtr/xtr-7.png",
+        },
+      ],
+      imagenesData: [
+        {
+          id: 1,
+          imagen: "/utilitarios/xtr/xtr-8.png",
+        },
+        {
+          id: 2,
+          imagen: "/utilitarios/xtr/xtr-9.png",
+        },
+
+        {
+          id: 3,
+          imagen: "/utilitarios/xtr/xtr-10.png",
+        },
+      ],
+    },
   },
 ];
 
-export default function UtilitariosPage() {
+export default async function UtilitariosPage({ params }: Props) {
+  const { slug } = await params;
+
+  const moto = utilitariosImagenes.find((item) => item.slug === slug);
+
   return (
     <>
       <Header />
@@ -67,7 +256,7 @@ export default function UtilitariosPage() {
             {utilitariosImagenes.map((m) => (
               <Link
                 key={m.id}
-                href={`#`}
+                href={`/atvs/utilitarios/${m.slug}`}
                 className="group relative flex flex-col bg-white shadow-[0_10px_30px_-12px_rgba(12,44,156,0.25)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-12px_rgba(12,44,156,0.4)]"
               >
                 {/* Zona de la foto */}
@@ -103,7 +292,7 @@ export default function UtilitariosPage() {
                     </span>
                   </div>
 
-                  {/* <span className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#0C2C9C] text-white transition-colors duration-300 group-hover:bg-red-600">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#0C2C9C] text-white transition-colors duration-300 group-hover:bg-red-600">
                     <svg
                       viewBox="0 0 24 24"
                       className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-0.5"
@@ -115,7 +304,7 @@ export default function UtilitariosPage() {
                     >
                       <path d="M5 12h14M13 6l6 6-6 6" />
                     </svg>
-                  </span> */}
+                  </span>
                 </div>
               </Link>
             ))}

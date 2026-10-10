@@ -4,17 +4,109 @@ import Link from "next/link";
 import React from "react";
 import { FiArrowLeft } from "react-icons/fi";
 
-const utilitariosImagenes = [
+type Props = {
+  params: Promise<{
+    slug: string;
+  }>;
+};
+
+type Moto = {
+  id: number;
+  nombre: string;
+  precio: string;
+  slug: string;
+  img: string;
+  year: string;
+  datos: {
+    frase: string;
+    precioRegular: string;
+    bono: string;
+    precioConBono: string;
+    pdf: string;
+    imagenHero: string;
+    imagenFicha: string;
+    imagenesMotos: {
+      id: number;
+      imagen: string;
+    }[];
+    imagenesData: {
+      id: number;
+      imagen: string;
+    }[];
+  };
+};
+
+export const deportivosImagenes: Moto[] = [
   {
     id: 1,
     nombre: "YFM110R",
     precio: "$89,999",
     img: "/deportivos/deport-1.png",
+    slug: "yfm110r",
     year: "2026",
+    datos: {
+      frase: "Inspirando a nuevos corredores",
+      precioRegular: "$89,999",
+      bono: "",
+      precioConBono: "",
+      pdf: "/pdf/fascino-2024.pdf",
+      imagenHero: "/deportivos/yfm/yfm-hero.jpg",
+      imagenFicha: "/deportivos/yfm/yfm-ficha.jpg",
+
+      imagenesMotos: [
+        {
+          id: 1,
+          imagen: "/deportivos/yfm/yfm-1.jpg",
+        },
+        {
+          id: 2,
+          imagen: "/deportivos/yfm/yfm-2.png",
+        },
+      ],
+      imagenesData: [
+        {
+          id: 1,
+          imagen: "/deportivos/yfm/yfm-3b.png",
+        },
+        {
+          id: 2,
+          imagen: "/deportivos/yfm/yfm-4.png",
+        },
+
+        {
+          id: 3,
+          imagen: "/deportivos/yfm/yfm-5.png",
+        },
+        {
+          id: 4,
+          imagen: "/deportivos/yfm/yfm-6.png",
+        },
+        {
+          id: 5,
+          imagen: "/deportivos/yfm/yfm-7.png",
+        },
+        {
+          id: 6,
+          imagen: "/deportivos/yfm/yfm-8.png",
+        },
+        {
+          id: 7,
+          imagen: "/deportivos/yfm/yfm-9.png",
+        },
+        {
+          id: 8,
+          imagen: "/deportivos/yfm/yfm-10.png",
+        },
+      ],
+    },
   },
 ];
 
-export default function PageDeportivos() {
+export default async function PageDeportivos({ params }: Props) {
+  const { slug } = await params;
+
+  const moto = deportivosImagenes.find((item) => item.slug === slug);
+
   return (
     <>
       <Header />
@@ -43,10 +135,10 @@ export default function PageDeportivos() {
           </div>
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {utilitariosImagenes.map((m) => (
+            {deportivosImagenes.map((m) => (
               <Link
                 key={m.id}
-                href={`#`}
+                href={`/atvs/deportivos/${m.slug}`}
                 className="group relative flex flex-col bg-white shadow-[0_10px_30px_-12px_rgba(12,44,156,0.25)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-12px_rgba(12,44,156,0.4)]"
               >
                 {/* Zona de la foto */}
@@ -82,7 +174,7 @@ export default function PageDeportivos() {
                     </span>
                   </div>
 
-                  {/* <span className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#0C2C9C] text-white transition-colors duration-300 group-hover:bg-red-600">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#0C2C9C] text-white transition-colors duration-300 group-hover:bg-red-600">
                     <svg
                       viewBox="0 0 24 24"
                       className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-0.5"
@@ -94,7 +186,7 @@ export default function PageDeportivos() {
                     >
                       <path d="M5 12h14M13 6l6 6-6 6" />
                     </svg>
-                  </span> */}
+                  </span>
                 </div>
               </Link>
             ))}

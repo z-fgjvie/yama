@@ -99,8 +99,8 @@ export default function Header() {
         <Link href="/">
           <Image
             src="/logo-yamaha.webp"
-            width={110}
-            height={110}
+            width={140}
+            height={140}
             alt="Yamaha"
           />
         </Link>
